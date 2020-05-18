@@ -2,11 +2,10 @@
 from django.db import models
 from django.urls import reverse
 from django.db import transaction
-from cra.snippets import unique_slugify
-
+from django.utils.text import slugify
 
 class Calendario(models.Model):
-    """Calendario referente as datas do semestre"""
+    """Calendario ano/semestre com datas de inicio e fim para solicitações e recursos"""
     ano = models.CharField(
         ("Ano"), max_length=4,
         help_text='Ano dos pedidos, ex: 2020')
@@ -43,7 +42,7 @@ class Calendario(models.Model):
     def save(self, *args, **kwargs):
         """Garante que exista apenas um is_active=True e define a slug"""    
         slug_str = f'{self.ano}-{self.semestre}'
-        unique_slugify(self, slug_str)
+        self.slug = slugify(f'{self.ano}-{self.semestre}')
         if self.is_active:
             with transaction.atomic():
                 Calendario.objects.filter(

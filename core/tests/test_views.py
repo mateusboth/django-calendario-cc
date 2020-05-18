@@ -2,7 +2,7 @@ from django.test import TestCase
 from datetime import date, timedelta
 from django.core.exceptions import ValidationError
 from django.urls import reverse, reverse_lazy
-from calendario.models import Calendario
+from core.models import Calendario
 
 # Create your tests here.
 

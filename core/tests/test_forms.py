@@ -1,6 +1,6 @@
 from django.test import SimpleTestCase
 from datetime import date, timedelta
-from calendario.forms import CalendarioForm
+from core.forms import CalendarioForm
 from django.core.exceptions import ValidationError
 
 # Create your tests here.

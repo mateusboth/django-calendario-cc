@@ -3,7 +3,7 @@ from django.test import TestCase
 from django.db import IntegrityError
 # Create your tests here.
 
-from calendario.models import Calendario
+from core.models import Calendario
 
 cal = { 'ano': '2020',
         'semestre': '1',
