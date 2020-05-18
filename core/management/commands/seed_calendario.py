@@ -3,7 +3,7 @@ from datetime import date
 import logging
 from django.core.management.base import BaseCommand
 import random
-from calendario.models import Calendario
+from core.models import Calendario
 
 
 logger = logging.getLogger(__name__)
